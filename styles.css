@@ -1,0 +1,527 @@
+/* styles.css */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    color: black;
+    padding: 10px 15px;
+    border-bottom: 1px solid #ddd;
+    transition: top 0.3s;
+    position: fixed;
+    top: 0;
+    width: 95%;
+    z-index: 1000; /* Ensure header is above other content */
+}
+
+header .logo h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+header .header-icons a {
+    color: black;
+    margin-left: 15px;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    margin-top: 60px; /* Adjust for fixed header */
+}
+
+#write-story {
+    width: 100%;
+    max-width: 600px;
+    background-color: white;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+#write-story h2 {
+    margin-top: 0;
+}
+
+#story-title {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+#story-input {
+    width: 100%;
+    height: 100px;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+    resize: vertical;
+}
+
+#write-story button {
+    background-color: black;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+#feed {
+    width: 100%;
+    max-width: 600px;
+}
+
+.story {
+    background-color: white;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.story h3 {
+    margin-top: 0;
+}
+
+.story-time {
+    font-size: 12px;
+    color: #888;
+}
+
+.story-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.story-actions span i.active {
+    color: orange; /* Fire-like color for active icons */
+}
+
+.story-rating {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.story-rating i {
+    color: #ccc;
+    cursor: pointer;
+}
+
+.story-rating i.active {
+    color: orange; /* Fire-like color for active rating stars */
+}
+
+footer {
+    background-color: white;
+    color: black;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    border-top: 1px solid #ddd;
+}
+
+footer nav ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+footer nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+footer nav ul li a {
+    color: black;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+footer nav ul li a.active i {
+    color: orange; /* Fire-like color for active icons */
+}
+
+footer nav ul li i {
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    main {
+        padding: 10px;
+    }
+
+    #write-story, #feed {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 10px;
+    }
+
+    footer {
+        padding: 5px;
+    }
+
+    footer nav ul li a {
+        font-size: 12px;
+    }
+
+    footer nav ul li i {
+        font-size: 20px;
+    }
+}
+/* CSS to add to your existing styles */
+
+.story-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.star-count {
+    font-weight: bold;
+    color: #000;
+}
+
+.profile-picture {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.username {
+    font-weight: bold;
+    font-size: 14px;
+}
+/* CSS to add to your existing styles */
+
+.story-content .more {
+    color: purple;
+    cursor: pointer;
+}
+
+.story-content.expanded .more {
+    display: none;
+}
+
+.story-content.expanded .back {
+    color: purple;
+    cursor: pointer;
+    display: inline;
+}
+/* CSS to add to your existing styles */
+
+.story-actions span i.active {
+    color: orange; /* Fire-like color for active icons */
+}
+.comment-container .comments{
+    margin-bottom: 120px;
+}
+.comment-section {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 75%;
+    background-color: white;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1001;
+    transition: transform 0.3s ease;
+    transform: translateY(100%);
+    overflow: hidden; /* Prevent content from overflowing */
+}
+
+.comment-section.show {
+    display: block;
+    transform: translateY(0);
+    border-radius: 30px 30px 0 0;
+}
+
+.comment-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+.comment-container {
+    overflow-y: auto;
+    height: calc(100% - 110px); /* Adjust based on the height of the textarea and button container */
+    padding: 20px;
+    margin-bottom: 40px; /* Add margin-bottom to create space for the fixed input container */
+}
+
+.comment-input-container {
+    position: absolute; /* Change to absolute */
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    padding: 10px;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1002;
+    display: flex;
+    flex-direction: column; /* Ensure the textarea and button are stacked vertically */
+}
+
+.comment-section textarea {
+    width: 100%;
+    height: 60px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+    resize: vertical;
+    margin-bottom: 10px; /* Add margin to create space between textarea and button */
+}
+
+.comment-section button {
+    background-color: black;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    width: 100%;
+}
+
+.comment {
+    display: flex;
+    flex-direction: column; /* Adjust to column to place elements vertically */
+    align-items: flex-start;
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #f5f5f5;
+    border-radius: 5px;
+    position: relative; /* Added to position like button to the right */
+}
+
+.comment .profile-picture {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.comment .comment-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column; /* Adjust to column to place elements vertically */
+}
+
+.comment .comment-content .username {
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+.comment .comment-content .comment-text {
+    margin: 5px 0;
+}
+
+.comment .comment-content .timestamp {
+    font-size: 12px;
+    color: #888;
+}
+
+.comment .like-button {
+    align-self: flex-end;
+    color: #888;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.comment .like-button i.active {
+    color: #00bfff; /* Blue fire-like color */
+}
+
+.comment-reply {
+    display: flex;
+    flex-direction: column; /* Adjust to column to place elements vertically */
+    align-items: flex-start;
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #e0e0e0; /* Slightly different background for replies */
+    border-radius: 5px;
+    margin-left: 20px; /* Indent replies */
+    position: relative; /* Added to position like button to the right */
+}
+
+.comment-reply .profile-picture {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.comment-reply .comment-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column; /* Adjust to column to place elements vertically */
+}
+
+.comment-reply .comment-content .username {
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+.comment-reply .comment-content .comment-text {
+    margin: 5px 0;
+}
+
+.comment-reply .comment-content .timestamp {
+    font-size: 12px;
+    color: #888;
+}
+
+.comment-reply .like-button {
+    align-self: flex-end;
+    color: #888;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.comment-reply .like-button i.active {
+    color: #00bfff; /* Blue fire-like color */
+}
+
+.replies {
+    display: none; /* Hide replies initially */
+    margin-top: 10px;
+    margin-left: 40px; /* Indent replies */
+    width: 90%;
+}
+
+.show-replies-button {
+    font-size: 12px;
+    color: #888;
+    cursor: pointer;
+    margin-top: 5px;
+    display: block;
+}
+
+.reply-button {
+    font-size: 12px;
+    color: #6533cf;
+    cursor: pointer;
+    margin-top: 45px;
+    display: block;
+}
+/*top stories*/
+/* Genre Section */
+/* Genre Section */
+#genres {
+    overflow-x: auto;
+    white-space: nowrap;
+    padding: 10px 0;
+    background-color: #f8f8f8;
+}
+
+.genres-container {
+    display: flex;
+    gap: 20px;
+}
+
+.genre {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #ddd;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.genre:hover {
+    background-color: #bbb;
+}
+
+/* Rankings Section */
+#rankings {
+    width: 95%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.ranking {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Ensure elements are spaced between */
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #f5f5f5;
+    border-radius: 10px;
+}
+
+.ranking .ranking-number {
+    font-size: 20px;
+    font-weight: bold;
+    margin-right: 15px;
+}
+
+.ranking .profile-picture {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.ranking-content {
+    display: flex;
+    flex-direction: column;
+    margin-right: auto; /* Align to the left */
+}
+
+.ranking-content .username {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.ranking-content .star-count {
+    font-weight: bold;
+    color: #000;
+}
+
+.story-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: 20px; /* Ensure there's space between the title and the profile content */
+}

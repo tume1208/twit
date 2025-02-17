@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile - Nuudel</title>
+    <script src="https://kit.fontawesome.com/90c079449c.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="userstyles.css">
+    <script defer src="userprofile.js"></script>
+    <script defer src="usersettings.js"></script>
+</head>
+<body>
+    <header id="header">
+        <div class="logo">
+            <h1>Nuudel</h1>
+        </div>
+        <div class="header-icons">
+            <a href="#settings" onclick="toggleSettingsMenu()"><i class="fas fa-cog"></i></a>
+        </div>
+    </header>
+    <main>
+        <section id="user-profile">
+            <div class="profile-header">
+                <img src="profile-picture.jpg" alt="Profile Picture" class="profile-picture">
+                <div class="user-info">
+                    <h2>Username</h2>
+                    <p>@usernamehandle</p>
+                    <button>Edit Profile</button>
+                </div>
+            </div>
+            <div class="profile-stats">
+                <div>
+                    <span>Stories</span>
+                    <span class="count">10</span>
+                </div>
+                <div>
+                    <span>Followers</span>
+                    <span class="count">150</span>
+                </div>
+                <div>
+                    <span>Following</span>
+                    <span class="count">180</span>
+                </div>
+            </div>
+            <div class="profile-points">
+                <h3>Collected Stars</h3>
+                <span class="points-count">Total Points: <b>0</b></span>
+            </div>
+            <div class="profile-bio">
+                <h3>Bio</h3>
+                <p>This is the user's bio. They love writing stories and sharing them with the world.</p>
+            </div>
+            <div class="profile-stories">
+                <h3>User's Stories</h3>
+                <!-- Example Story -->
+                <article class="story">
+                    <div class="story-header">
+                        <h4>Story Title</h4>
+                        <span class="story-time">2 hours ago</span>
+                    </div>
+                    <p class="story-content">Story content goes here...</p>
+                    <div class="story-actions">
+                        <span><i class="fas fa-heart" onclick="toggleLike(this)"></i> Like <span class="count">0</span></span>
+                        <span><i class="fas fa-comment" onclick="toggleCommentSection('comment-section-example')"></i> Comment <span class="count">0</span></span>
+                    </div>
+                    <div class="story-rating">
+                        <i class="fas fa-star" onclick="rateStory(this, 1, 'star-count-example')"></i>
+                        <i class="fas fa-star" onclick="rateStory(this, 2, 'star-count-example')"></i>
+                        <i class="fas fa-star" onclick="rateStory(this, 3, 'star-count-example')"></i>
+                        <i class="fas fa-star" onclick="rateStory(this, 4, 'star-count-example')"></i>
+                        <i class="fas fa-star" onclick="rateStory(this, 5, 'star-count-example')"></i>
+                    </div>
+                </article>
+                <!-- More stories will be dynamically inserted here -->
+            </div>
+        </section>
+    </main>
+    <footer>
+        <nav>
+            <ul>
+                <li><a href="index.html"><i class="fas fa-home" onclick="toggleIcon(this)"></i> Home</a></li>
+                <li><a href="top-stories.html"><i class="fas fa-fire" onclick="toggleIcon(this)"></i> Top Stories</a></li>
+                <li><a href="user.html" class="active"><i class="fas fa-user" onclick="toggleIcon(this)"></i> User</a></li>
+            </ul>
+        </nav>
+    </footer>
+
+    <!-- Settings Menu -->
+    <div id="settings-menu" class="settings-menu">
+        <a href="#" onclick="logout()">Logout</a>
+        <a href="#" onclick="toggleDarkMode()">Dark Mode</a>
+        <!-- Add more settings options as needed -->
+    </div>
+</body>
+</html>

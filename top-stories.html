@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuudel</title>
+    <script src="https://kit.fontawesome.com/90c079449c.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+    <script defer src="logoscroll.js"></script>
+    <script defer src="starcount.js"></script>
+</head>
+<body>
+    <header id="header">
+        <div class="logo">
+            <h1>Nuudel</h1>
+        </div>
+        <div class="header-icons">
+            <a href="#notifications"><i class="fas fa-bell" onclick="toggleIcon(this)"></i></a>
+            <a href="#messages"><i class="fas fa-envelope" onclick="toggleIcon(this)"></i></a>
+        </div>
+    </header>
+    <main>
+        <section id="genres">
+            <div class="genres-container">
+                <span class="genre">Top Story</span>
+                <span class="genre">Funny</span>
+                <span class="genre">Romance</span>
+                <span class="genre">Horror</span>
+                <!-- Add more genres as needed -->
+            </div>
+        </section>
+        <section id="rankings">
+            <h2>Top Stories Rankings</h2>
+            <!-- Example Ranking -->
+            <div class="ranking">
+                <span class="ranking-number">1</span>
+                <img src="profile-picture.jpg" alt="Profile Picture" class="profile-picture">
+                <div class="ranking-content">
+                    <span class="username">Username</span>
+                    <span class="star-count">Stars: <b>0</b></span>
+                </div>
+                <span class="story-title">Story Title</span>
+            </div>
+            <!-- More rankings will be dynamically inserted here -->
+        </section>
+    </main>
+    <footer>
+        <nav>
+            <ul>
+                <li><a href="index.html"><i class="fas fa-home" onclick="toggleIcon(this)"></i> Home</a></li>
+                <li><a href="top-stories.html" class="active"><i class="fas fa-fire" onclick="toggleIcon(this)"></i> Top Stories</a></li>
+                <li><a href="user.html"><i class="fas fa-user" onclick="toggleIcon(this)"></i> User</a></li>
+            </ul>
+        </nav>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,238 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    color: black;
+    padding: 10px 15px;
+    border-bottom: 1px solid #ddd;
+    transition: top 0.3s;
+    position: fixed;
+    top: 0;
+    width: 95%;
+    z-index: 1000; /* Ensure header is above other content */
+}
+
+header .logo h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+header .header-icons a {
+    color: black;
+    margin-left: 15px;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    margin-top: 60px; /* Adjust for fixed header */
+}
+
+#user-profile {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.profile-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.profile-picture {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+.user-info h2 {
+    margin: 0;
+}
+
+.user-info p {
+    margin: 5px 0;
+    color: #777;
+}
+
+.user-info button {
+    padding: 5px 10px;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.profile-stats {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.profile-stats div {
+    text-align: center;
+}
+
+.profile-stats .count {
+    font-size: 20px;
+    font-weight: bold;
+    color: #000;
+}
+
+.profile-points {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.profile-points h3 {
+    margin: 0;
+}
+
+.profile-points .points-count {
+    font-size: 18px;
+    color: #333;
+}
+
+.profile-bio {
+    margin-bottom: 20px;
+}
+
+.profile-stories {
+    border-top: 1px solid #ddd;
+    padding-top: 20px;
+}
+
+.story {
+    margin-bottom: 20px;
+}
+
+.story-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.story-content {
+    margin-bottom: 10px;
+}
+
+.story-actions span, .story-rating i {
+    margin-right: 15px;
+    cursor: pointer;
+    color: #888;
+}
+
+footer {
+    background-color: white;
+    color: black;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    border-top: 1px solid #ddd;
+}
+
+footer nav ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+footer nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+footer nav ul li a {
+    color: black;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+footer nav ul li a.active i {
+    color: orange; /* Fire-like color for active icons */
+}
+
+footer nav ul li i {
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+.settings-menu {
+    display: none;
+    position: absolute;
+    top: 50px;
+    right: 10px;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 1001;
+}
+
+.settings-menu a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: black;
+    border-bottom: 1px solid #ddd;
+}
+
+.settings-menu a:last-child {
+    border-bottom: none;
+}
+
+.settings-menu a:hover {
+    background-color: #f0f0f0;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    main {
+        padding: 10px;
+    }
+
+    #write-story, #feed {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 10px;
+    }
+
+    footer {
+        padding: 5px;
+    }
+
+    footer nav ul li a {
+        font-size: 12px;
+    }
+
+    footer nav ul li i {
+        font-size: 20px;
+    }
+}

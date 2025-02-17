@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuudel</title>
+    <script src="https://kit.fontawesome.com/90c079449c.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+    <script defer src="storycomment.js"></script>
+    <script defer src="logoscroll.js"></script>
+    <script defer src="starcount.js"></script>
+</head>
+<body>
+    <header id="header">
+        <div class="logo">
+            <h1>Nuudel</h1>
+        </div>
+        <div class="header-icons">
+            <a href="#notifications"><i class="fas fa-bell" onclick="toggleIcon(this)"></i></a>
+            <a href="#messages"><i class="fas fa-envelope" onclick="toggleIcon(this)"></i></a>
+        </div>
+    </header>
+    <main>
+        <section id="write-story">
+            <h2>Write a Story</h2>
+            <input type="text" id="story-title" placeholder="Story Title">
+            <textarea id="story-input" maxlength="5000" placeholder="Write your story here..."></textarea>
+            <button type="button" onclick="postStory()">Post Story</button>
+        </section>
+        <section id="feed">
+            <h2>News Feed</h2>
+            <!-- Example Story -->
+            <article class="story">
+                <div class="story-header">
+                    <img src="profile-picture.jpg" alt="Profile Picture" class="profile-picture">
+                    <span class="username">Username</span>
+                    <span class="star-count" id="star-count-1739696278995">Stars: <b>0</b></span>
+                </div>
+                <h3>we</h3>
+                <p class="story-time">0 seconds ago</p>
+                <p class="story-content" id="story-content-1739696278995">dcef</p>
+                <div class="story-actions">
+                    <span><i class="fas fa-heart" onclick="toggleLike(this)" aria-hidden="true"></i> Like <span class="count">0</span></span>
+                    <span><i class="fas fa-comment" onclick="toggleCommentSection('comment-section-1739696278995')" aria-hidden="true"></i> Comment <span class="count">0</span></span>
+                    <span><i class="fas fa-share" onclick="toggleShare(this)" aria-hidden="true"></i> Share <span class="count">0</span></span>
+                    <span><i class="fas fa-bookmark" onclick="toggleSave(this)" aria-hidden="true"></i> Save <span class="count">0</span></span>
+                </div>
+                <div class="story-rating">
+                    <i class="fas fa-star" onclick="rateStory(this, 1, 'star-count-1739696278995')" aria-hidden="true"></i>
+                    <i class="fas fa-star" onclick="rateStory(this, 2, 'star-count-1739696278995')" aria-hidden="true"></i>
+                    <i class="fas fa-star" onclick="rateStory(this, 3, 'star-count-1739696278995')" aria-hidden="true"></i>
+                    <i class="fas fa-star" onclick="rateStory(this, 4, 'star-count-1739696278995')" aria-hidden="true"></i>
+                    <i class="fas fa-star" onclick="rateStory(this, 5, 'star-count-1739696278995')" aria-hidden="true"></i>
+                </div>
+                <div class="comment-section" id="comment-section-1739696278995">
+                    <div class="comment-container">
+                        <div class="comments">
+                            <!-- Comments will be dynamically inserted here -->
+                        </div>
+                    </div>
+                    <div class="comment-input-container">
+                        <textarea placeholder="Add a comment..."></textarea>
+                        <button type="button" onclick="postComment('comment-section-1739696278995')">Post</button>
+                    </div>
+                </div>
+            </article>            
+            
+        </section>
+        <div class="comment-overlay" id="comment-overlay" onclick="closeCommentSections()"></div>
+    </main>
+    <footer>
+        <nav>
+            <ul>
+                <li><a href="#home" class="active"><i class="fas fa-home" onclick="toggleIcon(this)"></i> Home</a></li>
+                <li><a href="top-stories.html"><i class="fas fa-fire" onclick="toggleIcon(this)"></i> Top Stories</a></li>
+                <li><a href="user.html"><i class="fas fa-user" onclick="toggleIcon(this)"></i> User</a></li>
+            </ul>
+        </nav>
+    </footer>
+</body>
+</html>
